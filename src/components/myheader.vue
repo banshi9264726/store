@@ -10,8 +10,8 @@
               </button>
               <a class="navbar-brand" href="#">CRUD</a>
             </div>
-          </div>
-      </nav>
+        </div>
+    </nav>
 </template>
 
 <script>
