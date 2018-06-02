@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="sub-header">英雄列表</h2>
-    <a class="btn btn-success" href="add.html">Add</a>
+    <router-link :to="{name: 'heroesadd'}" class="btn btn-success">Add</router-link>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -20,7 +20,8 @@
             <td>
               <a href="edit.html">edit</a>
               &nbsp;&nbsp;
-              <a href="javascript:window.confirm('Are you sure?')">delete</a>
+              <a href="javascript:void(0)"
+              @click.prevent="handleDelete(item.id)">delete</a>
             </td>
           </tr>
         </tbody>
@@ -40,16 +41,38 @@ export default {
     };
   },
   mounted() {
+    this.loadDate();
+  },
+  methods: {
+    loadDate() {
     // 发送请求
-    axios.get('http://localhost:3000/heroes')
-      .then((res) => {
-        if (res.status === 200) {
-          this.list = res.data;
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      axios.get('http://localhost:3000/heroes')
+        .then((res) => {
+          if (res.status === 200) {
+            this.list = res.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    handleDelete(id) {
+      // 提示删除
+      if (!confirm('是否删除')) {
+        return;
+      }
+      // 发送请求
+      axios.delete(`http://localhost:3000/heroes/${id}`)
+        .then((res) => {
+          if (res.status === 200) {
+            // 删除成功
+            this.loadDate();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>
