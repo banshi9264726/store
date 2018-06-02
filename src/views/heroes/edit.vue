@@ -16,8 +16,6 @@
 </template>
 
 <script>
-// 导入axios
-import axios from 'axios';
 
 export default {
   data() {
@@ -37,7 +35,7 @@ export default {
   methods: {
     loadData() {
       // 发送请求获取当前要编辑的英雄对象
-      axios.get(`http://localhost:3000/heroes/${this.id}`)
+      this.$http.get(`http://localhost:3000/heroes/${this.id}`)
         .then((res) => {
           if (res.status === 200) {
             this.formData = res.data;
@@ -48,7 +46,7 @@ export default {
         });
     },
     handleEdit() {
-      axios.patch(`http://localhost:3000/heroes/${this.id}`, this.formData)
+      this.$http.patch(`http://localhost:3000/heroes/${this.id}`, this.formData)
         .then((res) => {
           // 修改成功
           this.$router.push({

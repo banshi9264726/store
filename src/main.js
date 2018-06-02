@@ -11,7 +11,10 @@ import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 // 导入css模块
 import '@/assets/css/index.css';
+import axios from 'axios';
 
+// 让vue实例中可以直接拿到axios对象
+Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
