@@ -11,11 +11,17 @@ import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 // 导入css模块
 import '@/assets/css/index.css';
-import axios from 'axios';
 
+// 原始写法
+// import axios from 'axios';
 // 让vue实例中可以直接拿到axios对象
-Vue.prototype.$http = axios;
-Vue.config.productionTip = false;
+// Vue.prototype.$http = axios;
+// Vue.config.productionTip = false;
+
+// 插件的使用
+import MyAxios from '@/plugins/myaxios';
+// Vue.use()内部调用了 MyAxios.install方法
+Vue.use(MyAxios);
 
 /* eslint-disable no-new */
 new Vue({
