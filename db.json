@@ -1,19 +1,55 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "张三1",
+      "age": 18,
+      "gender": "男"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "张三2",
+      "age": 18,
+      "gender": "男"
+    },
+    {
+      "id": 3,
+      "name": "张三3",
+      "age": 18,
+      "gender": "男"
+    },
+    {
+      "id": 4,
+      "name": "张三4",
+      "age": 18,
+      "gender": "男"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "heroes": [
+    {
+      "id": 2,
+      "name": "关羽",
+      "gender": "男"
+    },
+    {
+      "name": "刘备",
+      "gender": "男",
+      "id": 3
+    },
+    {
+      "name": "孙权",
+      "gender": "男",
+      "id": 4
+    },
+    {
+      "name": "戏命师",
+      "gender": "男",
+      "id": 5
+    },
+    {
+      "name": "你大爷",
+      "gender": "男",
+      "id": 6
+    }
+  ]
 }

@@ -7,7 +7,7 @@
             <input v-model="formData.name" type="text" class="form-control" id="name" placeholder="英雄名称">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">英雄性别</label>
+            <label for="gender">英雄性别</label>
             <input v-model="formData.gender" type="text" class="form-control" id="gender" placeholder="英雄性别">
           </div>
           <button @click.prevent="handleAdd" type="submit" class="btn btn-success">Submit</button>
